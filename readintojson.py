@@ -9,6 +9,7 @@ connspertime = {}
 def readintojson(filepath):
     while True:
         with open(filepath, 'r') as f:
+            print ("before" + str(datetime.datetime.now()))
             f.seek(position, 0)
             lines = f.readlines()
             position = f.tell()
@@ -76,6 +77,9 @@ def readintojson(filepath):
             output = open('output.log', 'w')
             output.write(json.dumps(connspertime))
             output.close()
+            print ("after" + str(datetime.datetime.now()))
+
+
 
         time.sleep(1)
 
