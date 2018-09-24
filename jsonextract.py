@@ -53,7 +53,7 @@ for eachtimerange in keys:
     entriesforthattime = contents[eachtimerange]
     for eachentry in entriesforthattime:
         eachuniquedst = eachentry['dst1'] + ":" + eachentry['dport1']
-        eachuniquesrc = eachentry['src1'] + ":" + eachentry['sport1']
+        eachuniquesrc = eachentry['src1']
 
         try:
             unique_ip_port_count_details[eachtimerange][eachuniquedst][eachuniquesrc] += 1
