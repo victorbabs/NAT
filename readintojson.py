@@ -10,7 +10,7 @@ connspertime = {}
 while True:
     with open('log', 'r') as f:
         f.seek(position, 0)
-        print ('Before: ' + datetime.datetime.utcnow())
+        print ('Before: ' + str(datetime.datetime.utcnow()))
         lines = f.readlines()
         position = f.tell()
         #print (lines)
@@ -77,6 +77,6 @@ while True:
         output = open('output.log', 'w')
         output.write(json.dumps(connspertime))
         output.close()
-        print ('After: ' + datetime.datetime.utcnow())
+        print ('After: ' + str(datetime.datetime.utcnow()))
 
     time.sleep(1)
