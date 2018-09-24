@@ -66,8 +66,8 @@ for eachtimerange in keys:
 
 #get total
 for eachtimerange in unique_ip_port_count_details.keys():
-    count = 0
     for eachuniquedestinationintimerange in unique_ip_port_count_details[eachtimerange]:
+        count = 0
         for eachvalue in unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange].values():
             count += int(eachvalue)
         unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange]['Total'] = count
