@@ -64,7 +64,7 @@ for eachtimerange in keys:
 
 #Remove unnecessary zeros
 for eachtimerange in unique_ip_port_count_details.keys():
-    for eachuniquedestinationintimerange in unique_ip_port_count_details[eachtimerange]:
+    for eachuniquedestinationintimerange in list(unique_ip_port_count_details[eachtimerange]):
         if unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange] == {}:
             del(unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange])
 
