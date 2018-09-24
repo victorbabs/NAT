@@ -4,7 +4,7 @@ with open('output.log', 'r') as file:
     contents = file.read()
     contents = json.loads(contents)
 
-print(contents)
+#print(contents)
 
 
 connsuniquepertime = {}
@@ -19,7 +19,7 @@ for eachkey in keys:
         unique_ip_port.add(eachentry['dst1'] + ":" + eachentry['dport1'])
     connsuniquepertime[eachkey] = unique_ip_port
 
-print(connsuniquepertime)
+#print(connsuniquepertime)
 
 
 unique_ip_port_count = {}
@@ -35,7 +35,7 @@ for eachkey in keys:
 
     connsuniquecountpertime[eachkey] = unique_ip_port_count
 
-print(connsuniquecountpertime)
+#print(connsuniquecountpertime)
 
 
 
@@ -61,4 +61,15 @@ for eachtimerange in keys:
             unique_ip_port_count_details[eachtimerange][eachuniquedst][eachuniquesrc] = 1
 
 
-print(unique_ip_port_count_details)
+#print(unique_ip_port_count_details)
+
+
+#get total
+for eachtimerange in unique_ip_port_count_details.keys():
+    count = 0
+    for eachuniquedestinationintimerange in unique_ip_port_count_details[eachtimerange]:
+        for eachvalue in unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange].values():
+            count += int(eachvalue)
+        unique_ip_port_count_details[eachtimerange][eachuniquedestinationintimerange]['Total'] = count
+
+print (unique_ip_port_count_details)
